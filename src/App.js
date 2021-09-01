@@ -69,7 +69,11 @@ function App() {
 
   return (
     <>
-      <div>{generateBox(gridSize)}</div>
+      {disable ? (
+        <h3>Press Reset To Play Again</h3>
+      ) : (
+        <div>{generateBox(gridSize)}</div>
+      )}
       <h1>{result}</h1>
       <button
         onClick={() => {
