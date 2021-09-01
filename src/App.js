@@ -73,10 +73,10 @@ function App() {
   return (
     <div style={{ textAlign: 'center' }}>
       <h1>Tic Tac Toe</h1>
-      <h5>Enter the number of rows and column</h5>
-      <p>Value should be greater than 3!</p>
+      <p style={{ margin: '4px' }}>Enter the number of rows and column</p>
+      <h5 style={{ margin: 0 }}>Value should be greater than 3!</h5>
       <input
-        style={{ margin: '16px 0px' }}
+        style={{ margin: '16px', marginTop: '8px' }}
         onChange={(e) => {
           setDisabled(true)
           if (!isNaN(e.target.value) && e.target.value > 2) {
