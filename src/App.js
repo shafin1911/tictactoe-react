@@ -81,7 +81,8 @@ function App() {
       <h1>{result}</h1>
       <button
         onClick={() => {
-          init()
+          setDisabled(true)
+          setTimeout(() => init(), 300)
         }}
       >
         Reset
