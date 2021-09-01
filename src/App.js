@@ -20,6 +20,9 @@ function App() {
 
   useEffect(() => {
     setResult(gameLogic(resultArray))
+    if (!resultArray.some((row) => row.includes(null))) {
+      setDisabled(true)
+    }
   }, [resultArray])
 
   useEffect(() => {
