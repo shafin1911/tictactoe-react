@@ -73,16 +73,6 @@ function App() {
   return (
     <div style={{ textAlign: 'center' }}>
       <h1>Tic Tac Toe</h1>
-      <h5>Enter the number of rows and column</h5>
-      <p>Value should be greater than 3!</p>
-      <input
-        style={{ margin: '16px 0px' }}
-        onChange={(e) => {
-          if (!isNaN(e.target.value) && e.target.value > 2)
-            setGridSize(e.target.value)
-          else setGridSize(3)
-        }}
-      />
       {disable ? (
         <h3>Press Reset To Play Again</h3>
       ) : (
