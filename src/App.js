@@ -13,9 +13,9 @@ function App() {
   )
 
   const init = () => {
+    setResultArray(new Array(gridSize).fill(new Array(gridSize).fill(null)))
     setCurrentInput('')
     setDisabled(false)
-    setResultArray(new Array(gridSize).fill(new Array(gridSize).fill(null)))
   }
 
   useEffect(() => {
@@ -73,6 +73,19 @@ function App() {
   return (
     <div style={{ textAlign: 'center' }}>
       <h1>Tic Tac Toe</h1>
+      <h5>Enter the number of rows and column</h5>
+      <p>Value should be greater than 3!</p>
+      <input
+        style={{ margin: '16px 0px' }}
+        onChange={(e) => {
+          setDisabled(true)
+          if (!isNaN(e.target.value) && e.target.value > 2) {
+            setGridSize(parseInt(e.target.value, 10))
+          } else {
+            setGridSize(3)
+          }
+        }}
+      />
       {disable ? (
         <h3>Press Reset To Play Again</h3>
       ) : (
